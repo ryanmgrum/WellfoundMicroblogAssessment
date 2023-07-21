@@ -10,6 +10,14 @@
                 <span id="post1">This is my one and only blog post. Can you add more using a for loop?</span>
             </td>
         </tr>
+        {% for post in posts %}
+        <tr>
+            <td>
+                <br>
+                <span id="post{{post.id}}">{{post.body}} by user {{post.user_id}}.</span>
+            </td>
+        </tr>
+        {% endfor %}
     </table>
     <nav aria-label="...">
         <ul class="pager">

@@ -1,8 +1,10 @@
-FROM python:slim
+FROM python:3.10-slim
 
 RUN useradd microblog
 
 WORKDIR /home/microblog
+
+RUN apt-get update && apt-get -y install gcc
 
 COPY requirements.txt requirements.txt
 RUN python -m venv venv
